@@ -16,9 +16,10 @@ class Game {
 	}
 
 	playMove(rowIndex, columnIndex){
-		this._board.flipTile(rowIndex, columnIndex)
-		if (this._board._playerBoard[rowIndex, columnIndex] === 'B' ){
-			console.log('Catch the Bomb, the game is over');
+		this._board.flipTile(rowIndex, columnIndex);
+
+		if (this._board.playerBoard[rowIndex][columnIndex] === 'B' ){
+			console.log('The game is over');
 			
 		}else if(this.hasSafeTiles) {
 			console.log('Congratulation, You won!');
@@ -26,7 +27,6 @@ class Game {
 		}else{
 			console.log('Current Board:');
 			// console.log(this._board);
-
 		}
 
 		this._board.print();

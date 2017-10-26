@@ -14,14 +14,15 @@ export class Board {
 		if (this._playerBoard[rowIndex][columnIndex] !== ' ') {
 			console.log('This tile has already been flipped!');
 			return
+
 		}else if(this._bombBoard[rowIndex][columnIndex] === 'B') {
 			this._playerBoard[rowIndex][columnIndex] = 'B';
+
 		}else{
 			this._playerBoard[rowIndex][columnIndex] = this.getNumberOfNeighborBombs(rowIndex, columnIndex);
 		}
 
 		this._numberOfTiles --;
-
 	}
 
 	getNumberOfNeighborBombs(rowIndex, columnIndex){
@@ -56,7 +57,7 @@ export class Board {
 	}
 
 	hasSafeTiles(){
-		return this._numberOfTiles !== this._numberOfBombs
+		return this._numberOfTiles === this._numberOfBombs
 	}
 
 	print() {
